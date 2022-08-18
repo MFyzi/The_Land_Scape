@@ -1,0 +1,40 @@
+@use '../scss/util/'as u;
+.navbar{
+    position: absolute;
+    z-index: 1;
+    bottom: 3rem;
+    left: calc(50% - 180px);
+    transition: all .5s ease-in;
+    height: 8vh;
+    @include u.breakpoint(large){
+       left: 55vw;
+    }
+    ul{
+        margin: auto;
+        width: 100%;
+        padding: 2rem;
+        list-style: none;
+        display: flex;
+        align-items: center;    
+        justify-content: center;
+        gap: 4rem;
+    }
+    &_link{
+        display: block;
+        font-size: 2rem;
+        text-decoration: none;
+        color: red;
+        @include u.breakpoint(large){
+            display: none;
+        }
+    }
+    &_link_name{
+        display: none;
+        text-decoration: none;
+        font-size: 2rem;
+        color: red;
+        @include u.breakpoint(large){
+            display: block;
+        }
+    }
+}

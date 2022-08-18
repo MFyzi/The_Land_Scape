@@ -1,0 +1,111 @@
+@use '../scss/util/'as u;
+
+
+.new{
+    display: flex;
+    align-items: center;
+}
+.slide{
+    height: 100vh;
+
+    &_image_container{
+        position: absolute;
+        width: 100%;
+        height: inherit;
+    
+        h1{
+        position: absolute;
+        top:3rem;
+        right: 2rem;
+        color: rgba(255, 255, 255, 0.22);
+        word-spacing: -3rem;
+        stroke-width: 2px;
+        font-size:5rem;
+        transition: all .5s ease-in;
+        letter-spacing: -2rem;
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        -webkit-text-stroke: 1.5px white;
+        animation: blink 1s linear;
+        
+        @include u.breakpoint(medium){
+            font-size: 7rem;
+            writing-mode:horizontal-tb;
+            text-orientation:sideways-right;
+            word-spacing: 1rem;
+            letter-spacing: .5rem;
+        }
+        @include u.breakpoint(large){
+            font-size: 9rem;
+            letter-spacing: 1rem;
+            word-spacing: 1.8rem;
+        }
+
+        @keyframes blink {
+            0%{
+                opacity: 0;
+            }
+            25%{
+                opacity: .5;
+    
+            }
+            50%{
+                opacity: .3;
+            }
+            75%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+
+        }
+    }
+}
+    &_disc_container{
+        color: white;
+        margin-top: 65vh;
+        background-color: rgba($color: #838383, $alpha: .5);
+        backdrop-filter: blur(1px);
+        position: relative;
+        padding: 1rem;
+
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #87878700 0%, #ffffffaa 100%);
+
+        }
+        h2{
+            color: rgba(255, 255, 255, 0);
+            position: absolute;
+            top: -4rem;
+            stroke-width: 2px;
+            font-size: 4rem;
+            letter-spacing: 0;
+            transition: all .5s ease-in;
+            -webkit-text-stroke: 1.5px white;
+            @include u.breakpoint(medium){
+                font-size: 5.5rem;
+                top: -6rem;
+            }
+            @include u.breakpoint(large){
+                font-size: 7rem;
+                top: -8rem;
+                letter-spacing: .5rem;
+            }
+
+        }
+        @include u.breakpoint(large){
+            padding-block: 2.5rem;
+            padding-inline: 2rem;
+        }
+        .paragraph{
+            width: 40%
+        }
+    }
+}

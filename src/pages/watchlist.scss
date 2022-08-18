@@ -1,0 +1,140 @@
+@use '../scss/util/' as u;
+.watchlist{
+    padding-top: 15vh;
+    overflow: hidden;
+    
+    @include u.breakpoint(medium){
+        margin-left: 17%;
+        display: block;
+        padding-top: 16vh;
+    }
+    @include u.breakpoint(large){
+        padding-top: 17vh;
+    }
+    
+    &_videosection{
+        @include u.breakpoint(large){
+            display: grid;
+            grid-template-columns: 50vw auto;
+        }
+        .video{
+            position: relative;
+            .watchlist_video_mention{
+                color: white;
+                font-size: 2vw;
+                font-weight:100;
+                background:rgba(164, 151, 151, 0.8);
+                padding: 2px 4px;
+                position: absolute;
+                bottom: 15px;
+                right: 8px;
+            }
+            .watchlist_video_count{
+                color: white;
+                font-size: 2vw;
+                font-weight:100;
+                background:rgba(164, 151, 151, 0.8);
+                padding: 2px 4px;
+                position: absolute;
+                top: 15px;
+                left: 8px;
+            }
+        }
+        .event_video_mention{
+             color: white;
+             font-size: 40%;
+             font-weight:100;
+             background:rgba(164, 151, 151, 0.8);
+             padding: 2px 4px;
+             position: absolute;
+             bottom: 15px;
+             right: 2rem;
+             @include u.breakpoint(large){
+                font-size: .5rem;
+             }
+            
+        }
+        video{
+            width: 100%;
+        }
+        .watchlist_hero{
+            margin-top: 2rem;
+            width: 100vw;
+            @include u.breakpoint(medium){
+                width: 80vw;
+            }
+            @include u.breakpoint(large){
+                width: inherit;
+                grid-column: 1/2;
+                grid-row: 1/3;
+            }
+        }
+        .watchlist_video-carousel{
+            margin-top: 2rem;
+            display: flex;
+            gap: .5rem;
+            overflow-x: auto;
+            video{
+                width: 40vw;
+                @include u.breakpoint(large){
+                    width: 15vw;
+                }
+            }
+            @include u.breakpoint(medium){
+                margin-inline: .5rem;
+            }
+            @include u.breakpoint(large){
+                grid-column: 2/3;
+                grid-row: 2/3;
+            }
+        }
+    }
+    
+    &_discription,h2{
+        padding-inline: .5rem;
+    }
+    &_discription{
+        @include u.breakpoint(large){
+            grid-row: 1/2;
+            grid-column: 2/3;
+        }
+    }
+
+
+    .side_banner{
+        opacity: 0;
+        position: absolute;
+        top: 1rem;
+        letter-spacing: 7px;
+        left:calc(-2.5rem + 1vw);
+        font-size: 7.5rem;
+        writing-mode: vertical-rl;
+        text-orientation:sideways-left;
+        color: rgba(0, 0, 0, 0.02);
+        -webkit-text-stroke: 1.5px black;
+        transform: rotate(180deg);
+        
+        @include u.breakpoint(medium){
+            font-size: calc(7.5rem + 1.5vw);
+            opacity: 1;
+        }
+    }
+    .side_banner_2{
+        opacity: 0;
+        position: absolute;
+        top: 1rem;
+        letter-spacing: 7px;
+        left:-4rem;
+        font-size: 7.5rem;
+        writing-mode: vertical-rl;
+        text-orientation:sideways-left;
+        color: rgba(90, 90, 90, 0.059);
+        -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.101);
+        transform: rotate(180deg);
+        
+        @include u.breakpoint(medium){
+            opacity: 1;
+            font-size: calc(7.5rem + 1.5vw);
+        }
+    }
+}

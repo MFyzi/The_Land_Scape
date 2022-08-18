@@ -1,0 +1,42 @@
+@use '../scss/util/' as u;
+
+.event_navigation{
+    background:#EEECEC;
+    height: 100vh;
+    &_link{
+        text-decoration: none;
+        color: black; 
+        font-size: 1.3rem;
+    }
+    li{
+        padding: 2px;
+        margin-bottom: 8px;       
+        margin-left: .3rem;
+    :hover{
+        background: #D9D9D9;
+    }
+    :active{
+        border: 2px solid black;
+        border-radius: 10px;
+
+    }}
+    &_ul{
+        position: fixed;
+        background-color: #EEECEC;
+        left: 0;
+        padding-top: 4rem;
+        width: 100%;
+        margin-left: 0;
+        display: flex;
+        justify-content: flex-start;
+        gap: 1rem;
+        border-bottom: .2rem solid black;
+        transition: all .5s ease-in;
+
+        @include u.breakpoint(medium){
+            left: 17%;
+        }
+    }
+
+
+}
